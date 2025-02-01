@@ -1,7 +1,7 @@
 import fs from "fs";
 import path from "path";
 
-const COURSE_CODES_JSON_PATH = path.resolve(__dirname, "../../data/courseCodes.json");
+const COURSE_CODES_JSON_PATH = path.resolve(__dirname, "../../data/course-codes.json");
 export const getCourseCodesFromJson = (): string[] => {
     try {
         const data = fs.readFileSync(COURSE_CODES_JSON_PATH, "utf-8");

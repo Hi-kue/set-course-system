@@ -1,4 +1,2 @@
-export * from "./student.type";
-export * from "./instructor.type";
-export * from "./course.type";  
-export * from "./user.type";
+export type { IStudent, IStudentWithId, FullName, Programs } from "./student.type.js";
+export type { ICourse, ICourseWithId, CourseSection } from "./course.type.js";
