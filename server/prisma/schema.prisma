@@ -1,0 +1,61 @@
+/**
+ * This is your Prisma schema file,
+ * learn more about it in the docs: https://pris.ly/d/prisma-schema
+ * @see https://pris.ly/d/prisma-schema
+ */
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mongodb"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id       String   @id @default(auto()) @map("_id") @db.ObjectId
+  name     String   @unique
+  email    String   @unique
+  password String
+  role     UserRole @default(User)
+}
+
+enum UserRole {
+  Admin
+  User
+}
+
+model Student {
+  id            String       @id @default(auto()) @map("_id") @db.ObjectId
+  studentNumber String       @unique
+  password      String       @unique
+  fullName      String
+  address       String
+  city          String
+  phoneNumber   String
+  email         String
+  program       String
+  enrollments   Enrollment[]
+  gpa           Float?
+}
+
+model Course {
+  id             String       @id @default(auto()) @map("_id") @db.ObjectId
+  courseCode     String       @unique
+  courseName     String
+  courseSection  String
+  courseSemester String
+  enrollments    Enrollment[]
+}
+
+model Enrollment {
+  id         String   @id @default(auto()) @map("_id") @db.ObjectId
+  student    Student  @relation(fields: [studentId], references: [id])
+  studentId  String   @db.ObjectId
+  course     Course   @relation(fields: [courseId], references: [id])
+  courseId   String   @db.ObjectId
+  enrolledAt DateTime @default(now())
+
+  @@unique([studentId, courseId])
+}
