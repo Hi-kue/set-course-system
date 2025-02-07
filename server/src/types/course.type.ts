@@ -1,0 +1,24 @@
+import fs from "fs";
+import path from "path";
+
+const COURSE_CODES_JSON_PATH = path.resolve(
+	__dirname,
+	"../../data/course-codes.json",
+);
+export const getCourseCodesFromJson = (): string[] => {
+	try {
+		const data = fs.readFileSync(COURSE_CODES_JSON_PATH, "utf-8");
+		const courseCodes = JSON.parse(data);
+		return courseCodes;
+	} catch (error) {
+		console.error("Error reading course codes for JSON file: ", error);
+		return [];
+	}
+};
+
+const courseCode = getCourseCodesFromJson();
+export type CourseSection = (typeof courseCode)[number];
+
+export type CourseResponse = {
+	// TODO: Implement CourseResponse type.
+};

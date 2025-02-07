@@ -1,0 +1,42 @@
+{
+	"courses": [
+		{ "code": "COMP-100", "description": "Programming I" },
+		{ "code": "COMP-120", "description": "Software Engineering Fundamentals" },
+		{ "code": "COMP-213", "description": "Web Interface Design" },
+		{ "code": "COMP-122", "description": "Introduction to Database Concepts" },
+		{ "code": "COMP-123", "description": "Programming 2" },
+		{ "code": "COMP-125", "description": "Client-Side Web Development" },
+		{ "code": "COMP-225", "description": "Software Requirements Engineering" },
+		{ "code": "COMP-301", "description": "Unix/Linux Operating Systems" },
+		{ "code": "COMP-214", "description": "Advanced Database Concepts" },
+		{ "code": "COMP-228", "description": "Java Programming" },
+		{ "code": "COMP-229", "description": "Web Application Development" },
+		{ "code": "COMP-246", "description": "Software Systems Design" },
+		{ "code": "COMP-212", "description": "Programming 3" },
+		{ "code": "COMP-216", "description": "Networking for Software Developers" },
+		{ "code": "COMP-254", "description": "Data Structures and Algorithms" },
+		{ "code": "COMP-304", "description": "Mobile Apps Development" },
+		{
+			"code": "COMP-311",
+			"description": "Software Testing and Quality Assurance"
+		},
+		{ "code": "COMP-231", "description": "Software Development Project I" },
+		{
+			"code": "COMP-255",
+			"description": "Business and Entrepreneurship for Software Engineering Technology"
+		},
+		{ "code": "COMP-303", "description": "Enterprise Application Development" },
+		{
+			"code": "COMP-306",
+			"description": "API Engineering and Cloud Computing"
+		},
+		{ "code": "COMP-307", "description": "Software Security" },
+		{
+			"code": "COMP-309",
+			"description": "Data Warehousing and Predictive Analytics"
+		},
+		{ "code": "COMP-308", "description": "Emerging Technologies" },
+		{ "code": "COMP-313", "description": "Software Development Project 2" },
+		{ "code": "COMP-321", "description": "Enterprise Systems Integration" }
+	]
+}

@@ -10,18 +10,9 @@
 		"enabled": true
 	},
 	"files": {
-		"include": [
-			"**/*.ts",
-			"**/*.js",
-			"**/*.md",
-			"**/*.json"
-		],
+		"include": ["**/*.ts", "**/*.js", "**/*.md", "**/*.json"],
 		"ignoreUnknown": false,
-		"ignore": [
-			"**/node_modules/**",
-			"**/dist/**",
-			"**/build/**"
-		]
+		"ignore": ["**/node_modules/**", "**/dist/**", "**/build/**"]
 	},
 	"formatter": {
 		"enabled": true,

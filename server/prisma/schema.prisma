@@ -49,13 +49,35 @@ model Course {
   enrollments    Enrollment[]
 }
 
+enum EnrollmentStatus {
+  ACTIVE
+  INACTIVE
+  SUSPENDED
+  GRADUATED
+  DROPPED
+  WITHDRAWN
+  TRANSFERRED
+  PAYMENT_PENDING
+  PAYMENT_OVERDUE
+}
+
 model Enrollment {
   id         String   @id @default(auto()) @map("_id") @db.ObjectId
   student    Student  @relation(fields: [studentId], references: [id])
   studentId  String   @db.ObjectId
   course     Course   @relation(fields: [courseId], references: [id])
   courseId   String   @db.ObjectId
+  enrollmentStatus EnrollmentStatus @default(ACTIVE)
   enrolledAt DateTime @default(now())
 
   @@unique([studentId, courseId])
+}
+
+// TODO: For authentication, we should store JWT packets for auth.
+model JwtPacket {
+  id        String   @id @default(auto()) @map("_id") @db.ObjectId
+  token     String
+  expiresAt DateTime
+  userId    String   @db.ObjectId
+  @@map("jwt_packets")
 }
